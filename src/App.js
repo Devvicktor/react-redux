@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AddTodo from "./components/AddTodo";
+import Todolist from "./components/TodoList";
+import styled from "styled-components";
+import Menu from "./components/Menu";
+const Wrapper = styled.div`
+  display: flex;
+  background: #f2f2f2;
+  height: 100vh;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Menu />
+      <Todolist />
+      <AddTodo />
+    </Wrapper>
   );
 }
 
