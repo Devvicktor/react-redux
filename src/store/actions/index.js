@@ -6,3 +6,6 @@ export const removeItemfromTodo = (data) => {
 };
 // export const ADD_ITEM = "ADD_ITEM_TO_TODO";
 // export const REMOVE_ITEM = "REMOV_ITEM_FROM_TODO_LIST";
+export const changeAppTheme = (theme) => {
+  return (dispatch) => dispatch({ theme, type: "CHANGE_THEME" });
+};
