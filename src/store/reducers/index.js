@@ -1,5 +1,8 @@
+import { lightTheme } from "../../util/theme";
+
 const initialState = {
   todos: [],
+  theme: lightTheme,
 };
 
 export default function todosReducer(state = initialState, action) {
@@ -16,7 +19,11 @@ export default function todosReducer(state = initialState, action) {
         ...state,
         todos: state.todos.filter((todo) => todo._id !== action.data),
       };
-
+    case "CHANGE_THEME":
+      return {
+        ...state,
+        theme: action.theme,
+      };
     default:
       return state;
   }

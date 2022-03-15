@@ -23,7 +23,7 @@ const Input = styled.input`
   width: 100%;
   padding: 0.5rem 0.8rem 0.5rem 0.8rem;
   margin: 0.9vw 0;
-  border: 0;
+  border: ${(props) => props.theme.border};
   border-radius: 5px;
   font-size: 18px;
 `;
@@ -32,10 +32,23 @@ const TextArea = styled.textarea`
   width: 100%;
   padding: 0.5rem 0.8rem 0.5rem 0.8rem;
   margin: 0.9vw 0;
-  border: 0;
+  border: ${(props) => props.theme.border};
   border-radius: 5px;
   font-size: 18px;
   height: 15vh;
+`;
+const Button = styled.button`
+  border-radius: 5px 5px 5px 5px;
+  margin-right: 10px;
+  padding: 10px 10px 10px 10px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  font-size: 16px;
+  color: ${(props) => props.theme.textColor};
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  border: ${(props) => props.theme.border};
+  width: 20%;
 `;
 export default function AddTodo() {
   const dispatch = useDispatch();
@@ -116,7 +129,7 @@ export default function AddTodo() {
         />
         <div>
           {" "}
-          <button onClick={handleSubmit}>Add</button>
+          <Button onClick={handleSubmit}>Add</Button>
         </div>
       </form>
     </TodoWrapper>
